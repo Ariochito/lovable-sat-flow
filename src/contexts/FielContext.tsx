@@ -77,7 +77,7 @@ export const FielProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   }, []);
 
-  const isValidated = config.isConfigured && config.rfc && config.lastValidation;
+  const isValidated = config.isConfigured && config.rfc !== null && config.lastValidation !== null;
 
   return (
     <FielContext.Provider value={{ config, setConfig, isValidated, validateFiel }}>

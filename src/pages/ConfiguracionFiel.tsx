@@ -225,7 +225,7 @@ const ConfiguracionFiel = () => {
               <Button 
                 type="submit" 
                 className="w-full" 
-                disable={loading || !cerFile || !keyFile || !password}
+                disabled={loading || !cerFile || !keyFile || !password}
               >
                 {loading ? (
                   <>
