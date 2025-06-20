@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -35,8 +34,9 @@ const Archivadas = () => {
       fechaFin: new Date('2023-11-30'),
       fechaSolicitud: new Date('2023-12-01T10:30:00'),
       estado: 'terminado_sin_datos',
+      status: 'active',
       mensaje: 'Solicitud completada exitosamente',
-      paquetes: 3,
+      paquetes: ['PKG001', 'PKG002', 'PKG003'],
       archivedDate: new Date('2024-01-01'),
       reason: 'completed',
       filesCount: 5,
@@ -51,8 +51,9 @@ const Archivadas = () => {
       fechaFin: new Date('2023-10-31'),
       fechaSolicitud: new Date('2023-11-15T14:20:00'),
       estado: 'listo',
+      status: 'active',
       mensaje: 'Paquetes listos para descarga',
-      paquetes: 2,
+      paquetes: ['PKG004', 'PKG005'],
       archivedDate: new Date('2024-01-05'),
       reason: 'user_request',
       filesCount: 8,
@@ -67,8 +68,9 @@ const Archivadas = () => {
       fechaFin: new Date('2023-09-30'),
       fechaSolicitud: new Date('2023-10-10T09:15:00'),
       estado: 'error',
+      status: 'cancelled',
       mensaje: 'Error en la solicitud - tiempo de espera agotado',
-      paquetes: 0,
+      paquetes: [],
       archivedDate: new Date('2024-01-10'),
       reason: 'error',
       filesCount: 0,
@@ -83,8 +85,9 @@ const Archivadas = () => {
       fechaFin: new Date('2023-08-31'),
       fechaSolicitud: new Date('2023-09-05T16:45:00'),
       estado: 'expirado',
+      status: 'cancelled',
       mensaje: 'Solicitud expirada - no se pudo completar',
-      paquetes: 0,
+      paquetes: [],
       archivedDate: new Date('2024-01-15'),
       reason: 'expired',
       filesCount: 0,
@@ -417,7 +420,7 @@ const Archivadas = () => {
                                 <label className="text-sm font-medium text-gray-600 dark:text-gray-400">
                                   Paquetes
                                 </label>
-                                <p className="text-lg font-semibold">{solicitud.paquetes}</p>
+                                <p className="text-lg font-semibold">{solicitud.paquetes.length}</p>
                               </div>
                               <div>
                                 <label className="text-sm font-medium text-gray-600 dark:text-gray-400">
