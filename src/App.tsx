@@ -12,6 +12,10 @@ import Dashboard from "./pages/Dashboard";
 import ConfiguracionFiel from "./pages/ConfiguracionFiel";
 import Solicitudes from "./pages/Solicitudes";
 import VerificarEstado from "./pages/VerificarEstado";
+import DescargarPaquetes from "./pages/DescargarPaquetes";
+import LeerPaquetes from "./pages/LeerPaquetes";
+import Historial from "./pages/Historial";
+import Archivadas from "./pages/Archivadas";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,22 +33,10 @@ const App = () => (
               <Route path="/configuracion" element={<ConfiguracionFiel />} />
               <Route path="/solicitudes" element={<Solicitudes />} />
               <Route path="/verificar" element={<VerificarEstado />} />
-              <Route path="/descargar" element={<div className="p-8 text-center">
-                <h1 className="text-2xl font-bold">⬇️ Descargar Paquetes</h1>
-                <p className="text-gray-600 mt-2">Próximamente...</p>
-              </div>} />
-              <Route path="/leer" element={<div className="p-8 text-center">
-                <h1 className="text-2xl font-bold">📄 Leer Paquetes</h1>
-                <p className="text-gray-600 mt-2">Próximamente...</p>
-              </div>} />
-              <Route path="/historial" element={<div className="p-8 text-center">
-                <h1 className="text-2xl font-bold">📊 Historial</h1>
-                <p className="text-gray-600 mt-2">Próximamente...</p>
-              </div>} />
-              <Route path="/archivadas" element={<div className="p-8 text-center">
-                <h1 className="text-2xl font-bold">🗃️ Archivadas</h1>
-                <p className="text-gray-600 mt-2">Próximamente...</p>
-              </div>} />
+              <Route path="/descargar" element={<DescargarPaquetes />} />
+              <Route path="/leer" element={<LeerPaquetes />} />
+              <Route path="/historial" element={<Historial />} />
+              <Route path="/archivadas" element={<Archivadas />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Layout>
